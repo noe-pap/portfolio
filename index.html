@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Iceberg&family=Permanent+Marker&display=swap');
+		</style>
+		<script>
+			async function fetchTime() {
+				try {
+					const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris');
+					const data = await response.json();
+					const dateTime = new Date(data.datetime);
+					document.getElementById('time').textContent = dateTime.toLocaleTimeString();
+				} 
+				catch (error) {
+					document.getElementById('time').textContent = 'Erreur de chargement de l\'heure';
+					console.error('Erreur:', error);
+				}
+			}
+
+			fetchTime();
+			setInterval(fetchTime, 1000); // Met à jour l'heure toutes les secondes
+		</script>
+	</head>
+	<body>
+		<nav id="barre">
+			<ul>
+				<li><h2>Portfolio</h2></li>
+				<li> <a href="./projet.html" ><h2>Sites Web</h2></a></li>
+				<li ><a href="#comp" ><h3>Compétences</h3></a></li>
+				<li ><a href="#interet" ><h3>Centres d'intérêts</h3></a></li>
+				<li ><a href="#contact" ><h3>Contact</h3></a></li>
+				<li id="time-container"><p id="time">Chargement de l'heure...</p></li>
+			</ul>
+		</nav>
+		
+		<main>
+		<section  class="grille" >
+			<aside>
+				<img  id="photo" alt="Photo non affichée :/" src="Moi2.jpg">
+				
+				<h1 class="centre">Noé PAPIN</h1>
+				<p class="centre">Etudiant en 1ère année de DEUST Webmaster et métiers de l'internet</p>
+			</aside>
+			<aside>
+			<h2 class="centre">Biographie</h2>
+			<p>Je suis un étudiant en première année de mon DEUST à l'université de Limoges en distanciel. J'ai décidé de poursuivre mes études dans le domaine informatique, car j'aime les jeux vidéo, mais aussi la spécialité NSI que j'avais en première et en terminale ma fortement intéressé.</p>
+			<h2 class="centre">Formations</h2>
+			<h4>2024-2026</h4>
+			<p>DEUST Webmaster et métiers de l'internet</p>
+			<h4>Université de Limoges - CVTIC</h4>
+			<br>
+			<h4>2023-2024</h4>
+			<p>Baccalauréat<br>Spécialité Mathématique et NSI</p>
+			<h4>Lycée Anna-de-noailles</h4>
+			</aside>
+			
+		</section>
+		
+		<a id="comp" ></a><section class="background1" class="blanc"></a>
+			<h2 class="blanc">Mes compétences</h2>
+			<img class="logo" alt="Photo non affichée :/" src="HTML5.png">
+			<img class="logo" alt="Photo non affichée :/" src="PYTHON.webp">
+			<img class="logo" alt="Photo non affichée :/" src="CSS3.png">
+			
+		</section>
+		
+		<a id="interet" ></a><section class="background2" class="blanc"></a>
+			<h2 class="blanc">Mes centres d'intérêts</h2>
+			<img class="passion" alt="Photo non affichée :/" src="bugatti.jpg">
+			<img class="passion" alt="Photo non affichée :/" src="informatique.jpg">
+			<img class="passion" alt="Photo non affichée :/" src="jeu_video.png">
+			<img class="passion" alt="Photo non affichée :/" src="randonnee.jpg">
+			
+		</section>
+		
+		<a id="contact" ></a><section class="background1" ></a>
+			<h2 class="blanc">Me contacter</h2>
+			<a  href="mailto:noe.papin@etu.unilim.fr"> <img class="contact" alt="Photo non affichée :/" src="MAIL.png"></a>
+		</section>
+		
+		</main>
+		
+		<footer>
+			
+		</footer>
+     
+	</body>
+</html>
